@@ -1,0 +1,49 @@
+<div layout="column" class="container" layout-align="start center">
+  <md-card class="card--size-big">
+    <md-card-content layout="column">
+      <img src="{{ rest.featured_image }}" width="1100" height="500">
+      <div class="rest-info" layout="column">
+        <span class="md-headline">{{ rest.name }}</span>
+        <span class="md-subhead">{{ rest.cuisines }}</span>
+        <div class="meta md-padding padding--left-no" layout="column">
+          <span class="display-flex">
+            <i class="material-icons">
+              stars
+            </i>&nbsp;{{ rest.user_rating.aggregate_rating }}&nbsp;({{ rest.user_rating.votes }} votes) | {{ restReview.reviews_count }}&nbsp;reviews
+          </span>
+        </div>
+      </div>
+      <md-divider></md-divider>
+      <div class="md-padding padding--left-no" layout="column">
+        <p class="text--color-grey">Cost for 2</p>
+        <span><b>{{ rest.currency }}{{ rest.average_cost_for_two }}</span></p>
+        <p class="text--color-grey">Address</p>
+        <span><b>{{ rest.location.address }}&nbsp;{{ rest.location.zipcode }}</b></span>
+      </div>
+      <md-divider></md-divider>
+      <div class="md-padding padding--left-no" layout="column">
+        <p class="text--color-grey">Photos</p>
+        <a href="{{ rest.photos_url }}" target="_blank"><b>{{ rest.photos_url }}</b></a>
+        <p class="text--color-grey">Menu</p>
+        <a href="{{ rest.menu_url }}" target="_blank"><b>{{ rest.menu_url }}</b></a>
+      </div>
+      <md-divider></md-divider>
+      <div class="md-padding padding--left-no" layout="column">
+        <p class="text--color-grey">Ratings</p>
+        <div ng-repeat="rev in restReview.user_reviews">
+          <div layout="row" class="md-padding padding--left-no">
+            <div flex="15">
+              <img class="img-circle" src="{{ rev.review.user.profile_image }}" width="100" height="100">
+            </div>
+            <div flex="85" layout="column">
+              <span class="md-subhead"><b>{{ rev.review.user.name }}</b></span>
+              <jk-rating-stars rating="rev.review.rating" read-only="true"></jk-rating-stars>
+              <span class="md-subhead">{{ rev.review.review_text }}</span>
+            </div>
+          </div>
+          <md-divider ng-if="!$last"></md-divider>
+        </div>
+      </div>
+    </md-card-content>
+  </md-card>
+</div>

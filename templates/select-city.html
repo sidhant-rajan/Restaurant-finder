@@ -1,1 +1,8 @@
-Hey Shalini How you doing
+<div layout="column" class="container md-padding" layout-align="start center">
+	<md-card class="card--size-small">
+		<p class="md-title">SELECT YOUR CITY</p>
+		<div ng-repeat="city in citiesList">
+			<md-button class="md-raised md-primary fixed-width" ui-sref="all-restaurants">{{city}}</md-button>
+		</div>
+	</md-card>
+</div>

@@ -2,29 +2,43 @@
 <html>
 <head>
 	<title>Restaurant Finder</title>
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+	<link rel="stylesheet" href="assets/css/angular-material.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/rating-stars.min.css">
 </head>
 <body ng-app="restFinderApp">
 
 	<md-toolbar class="md-hue-2">
     <div class="md-toolbar-tools">
-      <h2 flex md-truncate>Company Name</h2>
+      <a ui-sref="home"><h2>Furlenco Restaurant Finder</h2></a>
     </div>
   </md-toolbar>
   <div layout="column">
   	<div ui-view></div>
   </div>
+  <script src="assets/js/lodash.min.js"></script>
 	<!-- Angular Material requires Angular.js Libraries -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+  <script src="assets/js/angular.min.js"></script>
+  <script src="assets/js/angular-animate.min.js"></script>
+  <script src="assets/js/angular-aria.min.js"></script>
+  <script src="assets/js/angular-messages.min.js"></script>
 
   <!-- Angular Material Library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
+  <script src="assets/js/angular-material.min.js"></script>
   <!-- UI Router -->
-  <script src="https://unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+  <script src="assets/js/angular-ui-router.min.js"></script>
+  <script src="assets/js/restangular.min.js"></script>
 
+  <script src="assets/js/ui-scroll.min.js"></script>
+  <script src="assets/js/ui-scroll-grid.min.js"></script>
+  <script src="assets/js/rating-stars.min.js"></script>
+  <!-- Controllers and Services -->
   <script src="app.js"></script>
+  <script src="services/geolocator.js"></script>
+  <script src="controllers/select-city.js"></script>
+  <script src="controllers/restaurants-list.js"></script>
+  <script src="controllers/restaurant-details.js"></script>
 </body>
 </html>

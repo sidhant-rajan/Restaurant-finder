@@ -1,0 +1,39 @@
+<div layout="column" class="container" layout-align="start center">
+	<md-card class="card--size-big">
+		<md-card-content layout="column">
+			<p class="md-subhead">Showing restaurants in {{ localLocation }}</p>
+			<div when-scrolled="more()">
+				<div ng-repeat="rest in nearby_restaurants">
+					<div layout="row">
+						<div flex="30" class="md-padding">
+							<img class="image-padding" src="{{ rest.restaurant.featured_image }}" width="200" height="150">
+						</div>
+						<div layout="column" flex="70" class="md-padding">
+							<a class="md-headline" ui-sref="restaurant-details({resId:rest.restaurant.R.res_id})" title="{{ rest.restaurant.name }}">{{ rest.restaurant.name }}</a>
+							<span class="md-subhead">{{ rest.restaurant.cuisines }}</span>
+							<md-divider></md-divider>
+							<div class="meta md-padding padding--left-no" layout="column">
+								<span class="display-flex">
+									<i class="material-icons">
+										stars
+									</i>&nbsp;{{ rest.restaurant.user_rating.aggregate_rating }}&nbsp;({{ rest.restaurant.user_rating.votes }} votes)
+								</span>
+								<span class="display-flex">
+									<i class="material-icons">
+										money
+									</i>&nbsp;{{ rest.restaurant.currency }}{{ rest.restaurant.average_cost_for_two }} for two
+								</span>
+								<span class="display-flex" ng-if="rest.restaurant.has_online_delivery === 1">
+									<i class="material-icons">
+										directions_bike
+									</i>&nbsp;Delivery available
+								</span>
+							</div>
+						</div>
+					</div>
+					<md-divider ng-if="!$last"></md-divider>
+				</div>
+			</div>
+		</md-card-content>	
+	</md-card>
+</div>
