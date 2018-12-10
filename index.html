@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Restaurant Finder</title>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+</head>
+<body ng-app="restFinderApp">
+
+	<md-toolbar class="md-hue-2">
+    <div class="md-toolbar-tools">
+      <h2 flex md-truncate>Company Name</h2>
+    </div>
+  </md-toolbar>
+  <div layout="column">
+  	<div ui-view></div>
+  </div>
+	<!-- Angular Material requires Angular.js Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
+  <!-- UI Router -->
+  <script src="https://unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+
+  <script src="app.js"></script>
+</body>
+</html>
