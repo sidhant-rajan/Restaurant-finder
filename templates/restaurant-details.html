@@ -10,9 +10,9 @@
           <span class="display-flex">
             <i class="material-icons">
               stars
-            </i>&nbsp;{{ rest.user_rating.aggregate_rating }}&nbsp;({{ rest.user_rating.votes }} votes) | {{ restReview.reviews_count }}&nbsp;reviews |&nbsp;<i class="material-icons" ng-if="isFavouriteRestaurant()">
+            </i>&nbsp;{{ rest.user_rating.aggregate_rating }}&nbsp;({{ rest.user_rating.votes }} votes) | {{ restReview.reviews_count }}&nbsp;reviews&nbsp;<span ng-if="isFavouriteRestaurant()">|&nbsp;<i class="material-icons">
               favorite
-            </i> Added in favourites
+            </i>Added in favourites</span>
           </span>
         </div>
       </div>
