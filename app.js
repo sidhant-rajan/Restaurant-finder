@@ -1,6 +1,6 @@
-angular.module('restFinderApp', ['ui.router', 'ngMaterial', 'ngMessages', 'restangular', 'jkAngularRatingStars'])
+angular.module('restFinderApp', ['ui.router', 'ngMaterial', 'ngMessages', 'restangular', 'jkAngularRatingStars', 'LocalStorageModule'])
 
-	.config(function ($stateProvider, $urlRouterProvider) {
+	.config(function ($stateProvider, $urlRouterProvider, localStorageServiceProvider) {
 		$urlRouterProvider.otherwise('/home')
 
 		$stateProvider
@@ -21,4 +21,10 @@ angular.module('restFinderApp', ['ui.router', 'ngMaterial', 'ngMessages', 'resta
 				templateUrl: 'templates/restaurant-details.html',
 				controller: 'restaurantDetailsCtrl'
 			})		
+
+		localStorageServiceProvider
+    .setPrefix('restFinderApp')
+    .setStorageType('sessionStorage')
+    .setNotify(true, true)
 	})
+

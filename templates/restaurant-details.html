@@ -3,13 +3,16 @@
     <md-card-content layout="column">
       <img src="{{ rest.featured_image }}" width="1100" height="500">
       <div class="rest-info" layout="column">
-        <span class="md-headline">{{ rest.name }}</span>
+        <span class="md-headline">{{ rest.name }}
+        </span>
         <span class="md-subhead">{{ rest.cuisines }}</span>
         <div class="meta md-padding padding--left-no" layout="column">
           <span class="display-flex">
             <i class="material-icons">
               stars
-            </i>&nbsp;{{ rest.user_rating.aggregate_rating }}&nbsp;({{ rest.user_rating.votes }} votes) | {{ restReview.reviews_count }}&nbsp;reviews
+            </i>&nbsp;{{ rest.user_rating.aggregate_rating }}&nbsp;({{ rest.user_rating.votes }} votes) | {{ restReview.reviews_count }}&nbsp;reviews |&nbsp;<i class="material-icons" ng-if="isFavouriteRestaurant()">
+              favorite
+            </i> Added in favourites
           </span>
         </div>
       </div>

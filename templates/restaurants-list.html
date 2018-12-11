@@ -9,8 +9,22 @@
 							<img class="image-padding" src="{{ rest.restaurant.featured_image }}" width="200" height="150">
 						</div>
 						<div layout="column" flex="70" class="md-padding">
-							<a class="md-headline" ui-sref="restaurant-details({resId:rest.restaurant.R.res_id})" title="{{ rest.restaurant.name }}">{{ rest.restaurant.name }}</a>
-							<span class="md-subhead">{{ rest.restaurant.cuisines }}</span>
+							<div layout="row">
+								<div layout="column" flex="80">
+									<a class="md-headline" ui-sref="restaurant-details({resId:rest.restaurant.R.res_id})" title="{{ rest.restaurant.name }}">{{ rest.restaurant.name }}</a>
+									<span class="md-subhead">{{ rest.restaurant.cuisines }}</span>
+								</div>
+								<md-button class="md-icon-button" ng-click="actionOnFavourites(rest.restaurant.R.res_id, 'add')" flex="20" ng-if="!inFavourites(rest.restaurant.R.res_id)">
+									<i class="material-icons">
+									favorite_border
+									</i>
+								</md-button>
+								<md-button class="md-icon-button" ng-click="actionOnFavourites(rest.restaurant.R.res_id, 'remove')" flex="20" ng-if="inFavourites(rest.restaurant.R.res_id)">
+									<i class="material-icons">
+									favorite
+									</i>
+								</md-button>
+							</div>
 							<md-divider></md-divider>
 							<div class="meta md-padding padding--left-no" layout="column">
 								<span class="display-flex">
